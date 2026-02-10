@@ -1,0 +1,390 @@
+/* ============================================================= */
+/*                     PRINT STYLES – RE-ORDERED ONLY            */
+/* ============================================================= */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 1.2cm 1.5cm;
+  }
+
+  .gallery {
+    --photo-height: 3.7cm !important;
+  }
+
+  .orbitcontainer {
+    --orbit-size: 18cm !important;
+  }
+
+  /* =================================================================== */
+  /* 1. LAYOUT & STRUCTURE (in printed page order)                      */
+  /* =================================================================== */
+
+  html {
+    height: auto !important;
+  }
+  body {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Hide interactive UI */
+  #hover-panel,
+  #close-panel {
+    display: none !important;
+  }
+
+  /* Disable grid/flex-based responsive layout for print */
+  .main-grid {
+    display: block !important;
+  }
+
+  .title-page { /*first print-page is called title-page*/
+    break-inside: avoid !important;  /* Keep content together */
+    break-after: avoid-page !important;  /* No extra blank pages */
+  }
+
+  .print-page {
+    break-before: page !important;  /* New page for each single-page block */
+    break-inside: avoid !important;  /* Keep content together */
+    break-after: avoid-page !important;  /* No extra blank pages */
+  }
+
+  .details-link-container {
+    display: none !important;
+  }
+
+  .print-pages {
+    break-before: page !important;  /* Gallery starts on new page */
+    break-inside: auto !important;  /* Allow multi-page flow */
+    break-after: avoid-page !important;  /* No trailing blank */
+  }
+
+  /* Avoid breaks inside key elements */
+  .case-label, 
+  .pc-note, 
+  .orbitcontainer, 
+  .specs-container, 
+  .photo-card {
+    break-inside: avoid !important;
+  }
+
+  .case-label {
+    margin-top: 3cm;
+  }
+
+
+  /* all one pages */
+  .print-page,
+  .title-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 1cm;
+  }
+
+  /* Orbit page */
+  .orbitcontainer {
+    display: block !important;
+    position: relative !important;
+    width: 100%;
+    height: var(--orbit-size) !important;
+    min-height: var(--orbit-size) !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+
+  #orbit-heading,
+  #gallery-heading {
+    display: block !important;                /* Show it only in print */
+    position: relative !important;            /* Normal flow, no absolute mess */
+    top: auto !important;
+    left: auto !important;
+    width: 80% !important;
+    margin: 0 auto 1cm auto !important;             /* Space below heading */
+    padding: 0.4cm 0 !important;
+    font: bold 22pt Arial, "Arial Black", Helvetica, sans-serif !important;
+    color: #000080 !important;
+    text-align: center !important;
+    background: #fff !important;
+    border-bottom: 6pt double #000080 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;     /* Optional: full uppercase like "PC OVERVIEW" */
+    box-sizing: border-box !important;
+  }
+
+  .orbit::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #e8e8e8, #ffffff, #e8e8e8);
+    box-shadow: 
+      inset 0 0 20px #808080,           /* inner shadow */
+      0 0 0 4px #c0c0c0,                /* light inner bevel */
+      0 0 0 8px #808080,                /* dark outer bevel */
+      0 0 0 12px #e0e0e0,               /* subtle highlight */
+      0 0 0 16px #606060;               /* deep shadow */
+    pointer-events: none;
+    z-index: -110;
+  }
+  .orbit {
+    /*position: absolute !important;*/
+    margin-top: 3cm;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    position: relative !important;   /* ← forces a stacking context */
+    display: block !important;       /* ← gives it a proper box */
+    width: var(--orbit-size) !important;
+    height: var(--orbit-size) !important;
+    min-width: var(--orbit-size) !important;
+    min-height: var(--orbit-size) !important;
+  }
+  .orbit > .component,
+  .orbit > .line,
+  .orbit > .case-center {
+    position: absolute !important;
+  }
+
+  /* Specs page */
+  .specs-container {
+    display: block !important;
+    width: 100% !important;
+    border: none !important;
+    padding: none !important;
+    box-shadow: none !important;
+  }
+
+  .gallery { 
+    columns: 1 !important;
+    column-gap: 0.5rem !important;
+    display: flex !important;           
+    flex-flow: row wrap !important;     
+    justify-content: center !important;
+    align-content: flex-start !important;
+    min-height: var(--photo-height) !important;
+  }
+
+  /* General orbit component layout */
+  .component {
+    position: absolute !important;
+    width: var(--item-size) !important;
+    height: var(--item-size) !important;
+    text-align: center !important;  
+    align-items: center;
+    justify-content: center;
+  }
+  .component img {
+    display: block !important;
+    max-width: 85% !important;
+    height: auto !important;
+    width: fit-content !important;
+    margin: 2% auto 20% auto !important;
+  }
+  .comp-label {
+    position: absolute !important;
+    left: 0 !important; right: 0 !important;
+    bottom: 0px !important;
+    text-align: center !important;
+  }
+
+  .photo-card {
+    margin-bottom: 0.8cm !important;
+    height: var(--photo-height) !important;
+    min-height: var(--photo-height) !important;
+    flex: 0 1 auto !important;
+    width: auto !important;
+    margin: 0 !important;
+  
+    /* ←←← THIS IS THE KEY PART ←←← */
+    display: flex !important;
+    flex-direction: column !important;
+    border: 4px ridge #c0c0c0 !important;
+    background: #ffffff !important;
+    box-shadow: 6px 6px 15px #00000060 !important;
+    overflow: hidden !important;           /* prevents clipping */
+    border-radius: 12px !important;        /* same as screen – rounded corners */
+  }
+
+  
+  .photo-card a,
+  .photo-card img {
+    height: calc(var(--photo-height) - 0.8cm) !important;  /* leave room for caption */
+    object-fit: cover !important;
+  }
+  
+
+  /* The blue caption bar – now perfectly centered and never clipped */
+  .photo-card figcaption {
+    height: 0.9cm !important;
+    margin-top: auto !important;           /* pushes it to the bottom */
+    background: #000080 !important;
+    color: #ffff00 !important;
+    font: bold 11pt Arial, sans-serif !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-bottom-left-radius: 8px !important;   /* matches the card */
+    border-bottom-right-radius: 8px !important;
+  }
+
+  #hover-panel, script, noscript { 
+    display: none !important; 
+  }
+
+
+  /* =================================================================== */
+  /* 2. COLORS, TYPOGRAPHY & VISUAL STYLE (same page order)             */
+  /* =================================================================== */
+
+  body {
+    background: #fff !important;
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-family: "Arial", "Helvetica", sans-serif !important;
+  }
+
+  /* Title page */
+  .case-label {
+    font: bold 48pt "Arial Black", "Orbitron", sans-serif !important;
+    color: #000 !important;
+    font-weight: 900 !important;
+    text-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  .case-label::before {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    right: 5%;
+    height: 8pt;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+    border: 2px solid #000;
+    border-radius: 4px;
+  }
+  
+  .pc-note {
+    /* Reset screen styles that don't fit print */
+    background: #000080 !important;
+    color: #fff !important;
+    text-shadow: none !important;
+    border: 3px ridge #c0c0c0 !important;
+    border-radius: 0 !important;          /* optional: classic square look */
+    margin-top: 0.5cm !important;      /* Very close in print */
+    margin-bottom: 1cm !important;
+    padding-top: 0.3cm !important;    width: 90% !important;
+    max-width: none !important;
+    font: bold 18pt "Arial", sans-serif !important;
+    letter-spacing: 2px !important;
+    text-align: center !important;
+  }
+  
+  /* Orbit visual style */
+  .main-case {
+    border: 6px ridge #c0c0c0 !important;
+    box-shadow: 8px 8px 20px #00000040 !important;
+  }
+  .component {
+    background: linear-gradient(135deg, #f0f0f0, #d0d0d0) !important;
+    border: 3px ridge #c0c0c0 !important;
+    box-shadow: 6px 6px 12px #00000060 !important;
+  }
+  .component img {
+    border: none !important;
+    box-shadow: none !important;
+    box-shadow: 3px 3px 8px #00000080 !important;  
+  }
+  .comp-label {
+    font-size: 0.85rem !important;
+    background: #000080 !important;
+    color: #ffff00 !important;
+    font-weight: bold !important;
+    text-shadow: none !important;
+    padding: 0 !important;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+  }
+  .line {
+    background: #000080 !important;
+    height: 4px !important;
+    box-shadow: none !important;
+  }
+
+  /* Specs table */
+  .specs-container::before {
+    content: "TECHNICAL SPECIFICATIONS";
+    display: block;
+    font: bold 24pt "Arial Black";
+    color: #000080;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 4pt solid #ff0000;
+    padding-bottom: 0.5rem;
+  }
+  .specs-container h2 {
+    display: none !important;
+  }
+  .specs-container {
+    background: #fff !important;
+    color: #000 !important;
+    border: 6px ridge #c0c0c0 !important;
+    padding: 2rem !important;
+    box-shadow: none !important;
+  }
+  .specs-table {
+    width: 100% !important;
+    border: 4px double #000080 !important;
+    font-size: 13pt !important;
+  }
+  .specs-table,
+  .specs-table th,
+  .specs-table td {
+    border: 1px solid #000 !important;
+    background: #fff !important;
+    text-shadow: none !important;
+    color: #000 !important;
+  }
+  .specs-table th {
+    background: #000080 !important;
+    color: #ffff00 !important;
+    font-weight: bold;
+    text-align: center !important;
+    padding: 8px !important;
+  }
+  .specs-table td {
+    padding: 6px 10px !important;
+  }
+  .specs-table tr:nth-child(even) td {
+    background: #f0f0ff !important;
+  }
+
+  /* Gallery */
+  .photo-card {
+    border: 4px ridge #c0c0c0 !important;
+    background: #ffffff !important;
+    box-shadow: 6px 6px 15px #00000060 !important;
+    margin-bottom: 0.25rem !important;
+  }
+  .photo-card img {
+    display: block;
+    border-bottom: 3px solid #000080 !important;
+  }
+  .photo-card figcaption {
+    color: #ffff00 !important;
+    background: #000080 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    font-weight: bold !important;
+    /*padding: 0rem 3rem 3rem 3rem !important;*/
+    font-size: 12pt !important;
+    text-align: center !important;
+  }
+}

@@ -1,0 +1,39 @@
+@media print {
+  .chrome-print .gallery {
+    --photo-height: 4.95cm !important;   /* Chrome/Edge override */
+  }
+  
+  .chrome-print .orbitcontainer {
+    --orbit-size: 22cm !important;
+  }
+  
+  .chrome-print .orbit {
+    --item-size: calc(var(--orbit-size) * 0.18);
+  }
+
+  .chrome-print .case-label {
+    padding-top: 5rem !important;
+    padding-bottom: 10rem !important;
+    font-size: 70pt !important;
+    letter-spacing: 2px !important;
+  }
+
+  .chrome-print .pc-note {
+    font-size: 30pt !important;
+    letter-spacing: 2px !important;
+  }
+
+  .chrome-print #orbit-heading,
+  .chrome-print #gallery-heading {
+    font-size: 36pt !important;
+  }
+
+  .chrome-print .specs-container::before {
+    font-size: 36pt !important;
+  }
+
+  .chrome-print .specs-table {
+    font-size: 18pt !important;
+  }
+
+}

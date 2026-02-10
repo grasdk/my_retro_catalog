@@ -1,0 +1,147 @@
+/* ============================================================= */
+/* ALL-PAGE SPECIFIC STYLES – FINAL & PERFECT                    */
+/* (only loaded by all-index.html)                               */
+/* ============================================================= */
+
+body.all-page {
+  background: #000;
+  color: #0f0;
+  padding: 2rem 1rem;
+  position: relative;
+  font-family: 'Share Tech Mono', monospace;
+  min-height: 100vh;
+}
+
+/* ULTRA-MINIMAL LEFT-EDGE CRT NAV — grows from the edge */
+#nav-float {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 36px;                     /* tiny when closed */
+  max-width: 280px;                /* expands when open */
+  height: auto;
+  background: rgba(0,20,0,0.98);
+  border: 2px solid #0f0;
+  border-left: none;               /* seamless with edge */
+  border-radius: 0 12px 12px 0;    /* only right side rounded */
+  box-shadow: 0 0 30px #0f0;
+  z-index: 9999;
+  font-family: 'Share Tech Mono', monospace;
+  transition: width 0.45s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.45s;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Open state — grows from the left edge */
+#nav-float.open {
+  width: 280px;
+  box-shadow: 0 0 50px #0ff, 4px 0 30px #0f0;
+}
+
+/* The glowing toggle bar (≡ MACHINES) */
+#nav-toggle {
+  position: absolute;
+  top: 0; left: 0;
+  width: 36px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0,80,0,0.8));
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: #0ff;
+  font: bold 1.3rem 'Orbitron', sans-serif;
+  text-shadow: 0 0 12px #0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 2px;
+  user-select: none;
+  transition: background 0.4s;
+}
+#nav-float.open #nav-toggle { background: rgba(0,100,0,0.9); }
+
+/* Menu content — slides in */
+#nav-content {
+  margin-left: 36px;
+  padding: 1.2rem 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.2s;
+}
+#nav-float.open #nav-content { opacity: 1; }
+
+/* Clean list */
+#nav-float h2 {
+  margin: 0 0 0.7rem;
+  color: #0ff;
+  font: 1.25rem 'Orbitron', sans-serif;
+  text-shadow: 0 0 10px #0f0;
+  text-align: center;
+}
+#nav-float ul { list-style: none; margin: 0; padding: 0; }
+#nav-float a {
+  color: #0ff;
+  text-decoration: none;
+  display: block;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.88rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px dotted #0f0;
+  transition: all 0.3s;
+}
+#nav-float a:hover {
+  background: #0f0;
+  color: #000;
+  box-shadow: 0 0 15px #0ff;
+}
+
+/* Print — hide */
+@media print {
+  #nav-float { display: none; }
+}
+
+/* GLOWING GREEN CRT DIVIDERS — NOW WITH FULL GLORY */
+.pc-section {
+  margin-top: 6rem;
+  padding-top: 4rem;
+  position: relative;
+}
+.pc-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #0f0, transparent);
+  border-top: 2px solid #0f0;
+  border-bottom: 2px solid #0f0;
+  box-shadow: 
+    0 0 20px #0ff,
+    0 0 40px #0f0,
+    0 0 60px #0ff;
+  animation: pulse 6s infinite;
+}
+.pc-section:first-child {
+  margin-top: 2rem;
+  padding-top: 0;
+}
+.pc-section:first-child::before { display: none; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; transform: scaleX(1); }
+  50% { opacity: 1; transform: scaleX(1.05); }
+}
+
+/* Print cleanup */
+@media print {
+  body.all-page { padding: 0; background: #fff; color: #000; }
+  #nav-float { display: none; }
+  .pc-section {
+    page-break-before: always !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  .pc-section::before { display: none; }
+  .pc-section:first-child { page-break-before: avoid !important; }
+}

@@ -1,0 +1,413 @@
+/* =================================================================== */
+/* FONT IMPORTS                                                        */
+/* =================================================================== */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 900;
+  src: url('./fonts/static/Orbitron-Black.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Share Tech Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/ShareTechMono-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* =================================================================== */
+/* 1. LAYOUT & STRUCTURE                                               */
+/* =================================================================== */
+
+/* Global reset + body base layout */
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { height: 100%; overflow-y: auto; }
+
+/* Title */
+.case-label { width: 100%; margin: 2rem 0; text-align: center; }
+
+.pc-note {
+  color: #0f0;
+  text-shadow: 0 0 8px #0f0;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid #0f0;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 70%;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+}
+
+/* Main grid (orbit + specs side-by-side) */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem auto;
+  width: 100%;
+  padding: 0 1rem;
+  align-items: center !important;
+  place-self: center;
+}
+
+/* Make print-page wrappers stretch to full grid cell height in screen mode */
+.main-grid .print-page {
+  height: 100%;                       /* Stretch wrapper to fill grid row */
+  display: flex;                      /* Use flex to center inner content */
+  flex-direction: column;
+  justify-content: center;            /* Vertically center specs table */
+}
+
+/* Orbit container */
+
+#orbit-heading {
+  display: none;
+}
+.orbitcontainer {
+  --orbit-size: min(45vw, 800px);
+  width: var(--orbit-size);
+  height: var(--orbit-size);
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 2rem;
+  place-self: center;
+}
+.case-center {
+  width: calc(var(--radius) * 0.75);
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 25;
+}
+.component {
+  position: absolute;
+  width: var(--item-size);
+  height: var(--item-size);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  z-index: 20;
+}
+.line {
+  position: absolute;
+  height: 3px;
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+/* Specs table */
+.specs-container {
+  place-self: center;
+  padding: 2rem;
+  width: 100%;
+  overflow-y: auto;
+  text-align: center;
+  
+}
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+.specs-table th, .specs-table td {
+  padding: 0.19rem 0.5rem;
+  text-align: left;
+}
+.specs-table td:last-child { text-align: right; }
+
+/* Gallery */
+#gallery-heading {
+  display: none;
+}
+
+.gallery {
+  --photo-height: 220px;
+  --gap: 1.8rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--gap);
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+  max-width: 100%;
+  justify-content: center;
+}
+.photo-card {
+  height: var(--photo-height);
+  flex: 0 1 auto;
+  max-width: 1000px;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.photo-card a { 
+  display: block; 
+  height: calc(100% - 2.2rem); 
+  overflow: hidden; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.photo-card img { 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+/* Hover / Detail panel */
+#hover-panel {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 80vw;
+  max-width: 900px;
+  padding: 2rem;
+  z-index: 1000;
+  transition: transform 0.4s ease;
+  border-radius: 15px;
+  backdrop-filter: blur(4px);
+}
+#hover-panel.active { transform: translate(-50%, -50%) scale(1); }
+#panel-content { display: flex; flex-direction: column; }
+.popup-photo-scroll { overflow-y: auto; flex: 1; padding-right: 0.5rem; }
+.popup-scroll { max-height: 65vh; overflow-y: auto; padding-right: 0.5rem; }
+.popup-title {
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.popup-photo-scroll img,
+.popup-scroll img {
+  display: block;
+  max-width: 100%;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+#close-panel {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font: 2rem monospace;
+  cursor: pointer;
+}
+
+/* =================================================================== */
+/* 2. COLORS, TYPOGRAPHY & VISUAL STYLE                                */
+/* =================================================================== */
+
+body {
+  background: #000;
+  color: #0f0;
+  font-family: 'Share Tech Mono', monospace;
+  background: radial-gradient(circle at center, #001a00 0%, #000 70%);
+  min-height: 100vh;
+  padding-bottom: 3rem;
+}
+
+/* Title */
+.case-label {
+  font: 2.4em 'Orbitron';
+  font-size: 2.8rem;
+  color: #0ff;
+  text-shadow: 0 0 15px #0f0;
+}
+.comp-label {
+  font-size: 0.8rem;
+  line-height: 1.4rem;
+  color: #0ff;
+  text-shadow: 0 0 8px #0f0;
+  text-align: center;
+  white-space: nowrap !important;
+}
+
+/* Orbit visual style */
+.main-case {
+  width: 100%;
+  height: auto;
+  border: 4px solid #0f0;
+  box-shadow: 0 0 40px #0f0, inset 0 0 20px #0f0;
+  border-radius: 12px;
+}
+.component {
+  background: rgba(0,20,0,1);
+  border: 2px solid #0f0;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #0f0;
+  cursor: pointer;
+}
+.component img {
+  max-width: 90%;
+  max-height: 75%;
+  border-radius: 8px;
+  margin-bottom: 1px;
+  object-fit: contain;
+}
+.line {
+  background: #0f0;
+  box-shadow: 0 0 25px #0f0, 0 0 50px #0ff;
+}
+
+/* Specs table visual style */
+.specs-container {
+  background: rgba(0,20,0,0.8);
+  border: 2px solid #0f0;
+  border-radius: 12px;
+  box-shadow: 0 0 30px #0f0;
+}
+.specs-container h2 {
+  margin: 0;
+  color: #0ff;
+  text-shadow: 0 0 10px #0f0;
+  font: 1.8rem 'Orbitron';
+}
+.specs-table {
+  background: rgba(0,20,0,0.7);
+  border: 1px solid #0f0;
+}
+.specs-table th, .specs-table td { 
+  border: 1px solid #0f0; 
+}
+
+.specs-table th {
+  background: rgba(0,50,0,0.9);
+  color: #0ff;
+  text-shadow: 0 0 8px #0f0;
+}
+.specs-table tr:nth-child(even) td { background: rgba(0,30,0,0.4); }
+
+/* Gallery visual style */
+.photo-card {
+  background: rgba(0,20,0,0.85);
+  border: 2px solid #0f0;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #0f0;
+}
+.photo-card figcaption {
+  padding: .5rem .7rem;
+  font-size: .78rem;
+  color: #0ff;
+  text-align: center;
+  text-shadow: 0 0 6px #0f0;
+  background: rgba(0,20,0,.75);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px #0ff;
+}
+
+/* Hover panel visual style */
+#hover-panel {
+  background: rgba(0,20,0,0.98);
+  border: 3px solid #0f0;
+  box-shadow: 0 0 60px #0f0;
+}
+.popup-photo-scroll img,
+.popup-scroll img { border: 2px solid #0f0; }
+.popup-title {
+  border-bottom: 1px solid #0f0;
+  background: rgba(0,20,0,0.98);
+}
+#close-panel { color: #0f0; }
+
+/* =================================================================== */
+/* RESPONSIVE                                                          */
+/* =================================================================== */
+@media (max-width: 1100px) {
+  .main-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .orbitcontainer { --orbit-size: min(90vw, 1024px); }
+  .case-label { font-size: 2.3rem; }
+}
+@media (max-width: 768px) {
+  .orbitcontainer { --orbit-size: min(90vw, 752px); }
+  .case-label { font-size: 1.8rem; }
+  .comp-label { font-size: 0.8rem; }
+  .gallery { --gap: 1.2rem; }
+  .photo-card { min-width: 140px; }
+}
+
+
+
+/* ============================================= */
+/* DETAILS LINK - elegant cyberpunk style        */
+/* ============================================= */
+
+/* ============================================= */
+/* COMPACT RIGHT-ALIGNED DETAILS LINK under specs*/
+/* ============================================= */
+
+.details-link-container {
+  margin-top: 1.4rem;
+  text-align: right;
+  padding-right: 0.6rem;          /* slight breathing room from right edge */
+}
+
+.details-link-compact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 1rem;
+  font: bold 1rem 'Orbitron', sans-serif;
+  color: #0ff;
+  text-decoration: none;
+  text-shadow: 0 0 8px #0ff;
+  background: rgba(0, 50, 0, 0.55);
+  border: 1px solid #0f0;
+  border-radius: 8px;
+  box-shadow: 0 0 14px rgba(0, 255, 0, 0.45);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.details-link-compact:hover {
+  background: #0f0;
+  color: #000;
+  text-shadow: none;
+  box-shadow: 0 0 28px #0ff;
+  transform: translateY(-2px);
+}
+
+.details-link-compact:active {
+  transform: scale(0.96);
+}
+
+/* Arrow animation - subtle and stylish */
+.details-link-compact .arrow {
+  font-size: 1.2rem;
+  animation: arrow-nudge 2.4s infinite alternate ease-in-out;
+}
+
+@keyframes arrow-nudge {
+  from { transform: translateX(0);   opacity: 0.75; }
+  to   { transform: translateX(5px); opacity: 1;    }
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .details-link-container {
+    text-align: center;           /* center on very small screens */
+    padding-right: 0;
+    margin-top: 1.2rem;
+  }
+  
+  .details-link-compact {
+    font-size: 0.95rem;
+    padding: 0.4rem 1.1rem;
+  }
+}
