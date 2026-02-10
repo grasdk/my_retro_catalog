@@ -1,0 +1,38 @@
+.ns-retro_486 .orbit {
+  --count: 9;
+  --ratio: 0.75;          
+  --radius: calc(var(--orbit-size) * var(--ratio) / 2);
+  --laser-offset: -90deg;
+}
+
+.orbit {
+  --item-size: calc(var(--orbit-size) * 0.14);  /* auto-scale icons */
+}
+
+.ns-retro_486 .orbit > .component {
+  --angle: calc(360deg / var(--count) * var(--i));
+  left: 50%; top: 50%;
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--angle))
+    translateY(calc(-1 * var(--radius)))
+    rotate(calc(-1 * var(--angle)));
+  z-index: 20;
+}
+
+.ns-retro_486 .orbit > .line {
+  --angle: calc(360deg / var(--count) * var(--i));
+  position: absolute;
+  top: 50%; left: 50%;
+  width: var(--radius);
+  height: 3px;
+  background: #0f0;
+  box-shadow: 0 0 25px #0f0, 0 0 50px #0ff;
+  transform-origin: left center;
+  transform:
+    translateY(-50%)
+    rotate(calc(var(--angle) + var(--laser-offset)))
+    translateX(0%);   /* pull back to center */
+  z-index: -25;
+  pointer-events: none;
+}
