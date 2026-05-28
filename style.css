@@ -411,3 +411,130 @@ body {
     padding: 0.4rem 1.1rem;
   }
 }
+
+
+/* ============================================================= */
+/* CYBERPUNK CONFIG DROP-DOWN SELECTOR - LEFT / RIGHT SPLIT      */
+/* ============================================================= */
+
+/* Turn container into a flex line spanning the full specs width */
+.details-link-container {
+  margin-top: 1.4rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  display: flex !important;
+  justify-content: space-between !important; /* Forces items to opposite outer walls */
+  align-items: center !important;
+  gap: 1.5rem !important;
+}
+
+.config-selector-wrapper {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
+/* Force styling over any system browser agent defaults */
+button.config-btn-compact {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+  padding: 0.45rem 1rem !important;
+  font: bold 1rem 'Orbitron', sans-serif !important;
+  color: #0ff !important;
+  text-shadow: 0 0 8px #0ff !important;
+  background: rgba(0, 50, 0, 0.55) !important;
+  border: 1px solid #0f0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 14px rgba(0, 255, 0, 0.45) !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  white-space: nowrap !important;
+}
+
+button.config-btn-compact:hover {
+  background: #0f0 !important;
+  color: #000 !important;
+  text-shadow: none !important;
+  box-shadow: 0 0 28px #0ff !important;
+}
+
+button.config-btn-compact .arrow {
+  font-size: 0.75rem !important;
+  display: inline-block !important;
+  transition: transform 0.3s ease !important;
+}
+
+.config-selector-wrapper.open button.config-btn-compact .arrow {
+  transform: rotate(180deg) !important;
+}
+
+/* The Matrix Dropdown Tray Layout */
+.config-dropdown-menu {
+  display: none;
+  position: absolute;
+  bottom: 125%; /* Expand cleanly upward */
+  left: 0;      /* Align the dropdown box with the left edge of the button now */
+  background: rgba(0, 15, 0, 0.98) !important;
+  border: 2px solid #0f0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 25px rgba(0, 255, 0, 0.6) !important;
+  min-width: 170px !important;
+  z-index: 99999 !important;
+  overflow: hidden !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* Toggle activation state */
+.config-dropdown-menu.show {
+  display: block !important;
+}
+
+/* Format custom menu links explicitly to bypass global links */
+.config-dropdown-menu a {
+  color: #0ff !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+  padding: 0.60rem 1.1rem !important;
+  text-decoration: none !important;
+  text-shadow: 0 0 4px rgba(0, 255, 0, 0.5) !important;
+  display: block !important;
+  border-bottom: 1px dotted rgba(0, 255, 0, 0.3) !important;
+  transition: all 0.2s ease !important;
+  text-align: left !important;
+}
+
+.config-dropdown-menu a:last-child {
+  border-bottom: none !important;
+}
+
+.config-dropdown-menu a:hover {
+  background: #0f0 !important;
+  color: #000 !important;
+  text-shadow: none !important;
+  box-shadow: inset 0 0 10px #0ff !important;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .details-link-container {
+    flex-direction: column-reverse !important; /* Keeps Overview on top, Config on bottom on small screens */
+    align-items: stretch !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .config-selector-wrapper {
+    width: 100% !important;
+  }
+  button.config-btn-compact,
+  .details-link-compact {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .config-dropdown-menu {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 110% !important;
+  }
+}

@@ -16,6 +16,7 @@
 
   <!-- Script -->
   <script src="script.js" defer></script>
+  <script src="../config-switcher.js" defer></script>
   <script src="../chrome-print.js" defer></script>
 </head>
 <body>
@@ -35,65 +36,83 @@
             <div class="case-center" data-comp-id="case_fujitsu_siemens_desktop_at">
               <img src="photos/case_1_front_top.jpg" class="main-case">
             </div>
-                                                      <div class="component" 
-                   data-comp-id="cpu_intel_486_dx2_66" 
-                   style="--i: 0">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="cpu_intel_486_dx2_66"
+                 data-comp-type="CPU"
+                 style="--i: 0">
                 <img src="photos/intel-80486-dx2-66_1_top.jpg">
                 <div class="comp-label">486 DX2 66</div>
               </div>
               <div class="line" style="--i: 0"></div>
-                                                      <div class="component" 
-                   data-comp-id="ram_20mb_4x4mb_4x1mb" 
-                   style="--i: 1">
-                <img src="photos/4x4mb+4x1mb-ram_1_top.jpg">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="ram_20mb_4x4mb_4x1mb"
+                 data-comp-type="RAM"
+                 style="--i: 1">
+                <img src="photos/4x4mb+4x1mb-simm_1_top.jpg">
                 <div class="comp-label">20MB SIMM</div>
               </div>
               <div class="line" style="--i: 1"></div>
-                                                      <div class="component" 
-                   data-comp-id="mobo_siemens-nixdorf_s26361_d756_a131" 
-                   style="--i: 2">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="mobo_siemens-nixdorf_s26361_d756_a131"
+                 data-comp-type="Motherboard"
+                 style="--i: 2">
                 <img src="photos/s26361-d756-a131_1_top.jpg">
                 <div class="comp-label">Siemens MB</div>
               </div>
               <div class="line" style="--i: 2"></div>
-                                                      <div class="component" 
-                   data-comp-id="gfx_cirrus_logic_gd5428" 
-                   style="--i: 3">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="gfx_cirrus_logic_gd5428"
+                 data-comp-type="Graphics"
+                 style="--i: 3">
                 <img src="photos/cs-gs5428_1_top.jpg">
                 <div class="comp-label">CL-GD5428</div>
               </div>
               <div class="line" style="--i: 3"></div>
-                                                      <div class="component" 
-                   data-comp-id="snd_soundblaster_sb32_ct3930" 
-                   style="--i: 4">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="snd_soundblaster_sb32_ct3930"
+                 data-comp-type="Sound"
+                 style="--i: 4">
                 <img src="photos/snd_1_top.jpg">
                 <div class="comp-label">SB32 8MB RAM</div>
               </div>
               <div class="line" style="--i: 4"></div>
-                                                      <div class="component" 
-                   data-comp-id="net_yes_netware" 
-                   style="--i: 5">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="net_yes_netware"
+                 data-comp-type="Networking"
+                 style="--i: 5">
                 <img src="photos/yesnetware-rtl8019_1_top.jpg">
                 <div class="comp-label">RTL8019</div>
               </div>
               <div class="line" style="--i: 5"></div>
-                                                      <div class="component" 
-                   data-comp-id="storage_msystems_4gb_flash" 
-                   style="--i: 6">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="storage_msystems_4gb_flash"
+                 data-comp-type="Storage"
+                 style="--i: 6">
                 <img src="photos/msystems-4gb_1_top.jpg">
                 <div class="comp-label">4GB SSD</div>
               </div>
               <div class="line" style="--i: 6"></div>
-                                                      <div class="component" 
-                   data-comp-id="optical_delta_oip_cd4800a_cd_rom_x48" 
-                   style="--i: 7">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="optical_delta_oip_cd4800a_cd_rom_x48"
+                 data-comp-type="Optical drive"
+                 style="--i: 7">
                 <img src="photos/delta_oip_cd4800a_1_front.jpg">
                 <div class="comp-label">CD-ROM x48</div>
               </div>
               <div class="line" style="--i: 7"></div>
-                                                      <div class="component" 
-                   data-comp-id="diskette_samsung_sfd321b_144" 
-                   style="--i: 8">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="diskette_samsung_sfd321b_144"
+                 data-comp-type="Diskette drive"
+                 style="--i: 8">
                 <img src="photos/samsung-sfd-321b_1_front.jpg">
                 <div class="comp-label">1.44MB Floppy</div>
               </div>
@@ -110,70 +129,70 @@
               <tr><th>Component</th><th>shortname</th><th>Designation</th><th>Year</th><!--<th>Retro-price</th>--></tr>
             </thead>
             <tbody>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="cpu_intel_486_dx2_66" data-comp-type="CPU">
                 <td>CPU</td>
                 <td>486 DX2 66</td>
-                <td>Intel 80486 DX2 66MHz</td>
+                <td>Intel 80486 DX2-66</td>
                 <td>1992</td>
                 <!--<td>60$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="ram_20mb_4x4mb_4x1mb" data-comp-type="RAM">
                 <td>RAM</td>
                 <td>20MB SIMM</td>
                 <td>20MB: 4x4MB + 4x1MB SIMM RAM</td>
                 <td><1990</td>
                 <!--<td>125$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="mobo_siemens-nixdorf_s26361_d756_a131" data-comp-type="Motherboard">
                 <td>Motherboard</td>
                 <td>Siemens MB</td>
                 <td>Siemens-Nixdorf S26361-D756-A131</td>
                 <td>1993</td>
                 <!--<td>150$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="gfx_cirrus_logic_gd5428" data-comp-type="Graphics">
                 <td>Graphics</td>
                 <td>CL-GD5428</td>
                 <td>Cirrus Logic CL-GD5428</td>
                 <td>1993</td>
-                <!--<td>N/A</td>-->
+                <!--<td>25$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="snd_soundblaster_sb32_ct3930" data-comp-type="Sound">
                 <td>Sound</td>
                 <td>SB32 8MB RAM</td>
                 <td>Soundblaster SB32 CT3930 8MB (2x4MB) SIMM RAM</td>
                 <td>1995</td>
                 <!--<td>150$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="net_yes_netware" data-comp-type="Networking">
                 <td>Networking</td>
                 <td>RTL8019</td>
                 <td>Yes Netware RTL8019</td>
                 <td>1996</td>
                 <!--<td>20$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="storage_msystems_4gb_flash" data-comp-type="Storage">
                 <td>Storage</td>
                 <td>4GB SSD</td>
                 <td>M-Systems IDE-4K-25-4096-X-P 4GB</td>
                 <td><1999</td>
-                <!--<td>—</td>-->
+                <!--<td>20$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="optical_delta_oip_cd4800a_cd_rom_x48" data-comp-type="Optical drive">
                 <td>Optical drive</td>
                 <td>CD-ROM x48</td>
                 <td>Delta OIP-CD4800A CD-ROM x48</td>
                 <td>1999</td>
                 <!--<td>10$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="diskette_samsung_sfd321b_144" data-comp-type="Diskette drive">
                 <td>Diskette drive</td>
                 <td>1.44MB Floppy</td>
                 <td>Samsung SFD-321B 1.44MB</td>
                 <td>~2001</td>
                 <!--<td>20$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="case_fujitsu_siemens_desktop_at" data-comp-type="Case">
                 <td>Case</td>
                 <td>PCD-4H (AT)</td>
                 <td>Siemens Nixdorf PCD-4H Case (AT)</td>
@@ -187,6 +206,8 @@
             <a href="../index.html" class="details-link-compact">
               ← OVERVIEW
             </a>
+
+                        
           </div>
       </div>
     </div>
@@ -198,7 +219,7 @@
                                             
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="cpu_intel_486_dx2_66" data-comp-type="CPU">
             <a href="photos/intel-80486-dx2-66_1_top.jpg" target="_blank" rel="noopener">
               <img src="photos/intel-80486-dx2-66_1_top.jpg" alt="486 DX2 66 – Top">
             </a>
@@ -209,9 +230,9 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
-            <a href="photos/4x4mb+4x1mb-ram_1_top.jpg" target="_blank" rel="noopener">
-              <img src="photos/4x4mb+4x1mb-ram_1_top.jpg" alt="20MB SIMM – Top">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="ram_20mb_4x4mb_4x1mb" data-comp-type="RAM">
+            <a href="photos/4x4mb+4x1mb-simm_1_top.jpg" target="_blank" rel="noopener">
+              <img src="photos/4x4mb+4x1mb-simm_1_top.jpg" alt="20MB SIMM – Top">
             </a>
             <figcaption>
               20MB SIMM — Top
@@ -220,9 +241,9 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
-            <a href="photos/4x4mb+4x1mb-ram_2_bottom.jpg" target="_blank" rel="noopener">
-              <img src="photos/4x4mb+4x1mb-ram_2_bottom.jpg" alt="20MB SIMM – Bottom">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="ram_20mb_4x4mb_4x1mb" data-comp-type="RAM">
+            <a href="photos/4x4mb+4x1mb-simm_2_bottom.jpg" target="_blank" rel="noopener">
+              <img src="photos/4x4mb+4x1mb-simm_2_bottom.jpg" alt="20MB SIMM – Bottom">
             </a>
             <figcaption>
               20MB SIMM — Bottom
@@ -231,7 +252,7 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="mobo_siemens-nixdorf_s26361_d756_a131" data-comp-type="Motherboard">
             <a href="photos/s26361-d756-a131_1_top.jpg" target="_blank" rel="noopener">
               <img src="photos/s26361-d756-a131_1_top.jpg" alt="Siemens MB – Top">
             </a>
@@ -242,7 +263,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="mobo_siemens-nixdorf_s26361_d756_a131" data-comp-type="Motherboard">
             <a href="photos/s26361-d756-a131_2_bottom.jpg" target="_blank" rel="noopener">
               <img src="photos/s26361-d756-a131_2_bottom.jpg" alt="Siemens MB – Bottom">
             </a>
@@ -253,7 +274,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="mobo_siemens-nixdorf_s26361_d756_a131" data-comp-type="Motherboard">
             <a href="photos/s26361-d756-a131_3_front.jpg" target="_blank" rel="noopener">
               <img src="photos/s26361-d756-a131_3_front.jpg" alt="Siemens MB – Front">
             </a>
@@ -264,7 +285,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="mobo_siemens-nixdorf_s26361_d756_a131" data-comp-type="Motherboard">
             <a href="photos/s26361-d756-a131_4_riser_top.jpg" target="_blank" rel="noopener">
               <img src="photos/s26361-d756-a131_4_riser_top.jpg" alt="Siemens MB – Riser top">
             </a>
@@ -275,7 +296,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="mobo_siemens-nixdorf_s26361_d756_a131" data-comp-type="Motherboard">
             <a href="photos/s26361-d756-a131_5_riser_bottom.jpg" target="_blank" rel="noopener">
               <img src="photos/s26361-d756-a131_5_riser_bottom.jpg" alt="Siemens MB – Riser bottom">
             </a>
@@ -286,7 +307,7 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="gfx_cirrus_logic_gd5428" data-comp-type="Graphics">
             <a href="photos/cs-gs5428_1_top.jpg" target="_blank" rel="noopener">
               <img src="photos/cs-gs5428_1_top.jpg" alt="CL-GD5428 – Top">
             </a>
@@ -297,7 +318,7 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="snd_soundblaster_sb32_ct3930" data-comp-type="Sound">
             <a href="photos/snd_1_top.jpg" target="_blank" rel="noopener">
               <img src="photos/snd_1_top.jpg" alt="SB32 8MB RAM – Top">
             </a>
@@ -308,7 +329,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="snd_soundblaster_sb32_ct3930" data-comp-type="Sound">
             <a href="photos/snd_2_bottom.jpg" target="_blank" rel="noopener">
               <img src="photos/snd_2_bottom.jpg" alt="SB32 8MB RAM – Bottom">
             </a>
@@ -319,7 +340,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="snd_soundblaster_sb32_ct3930" data-comp-type="Sound">
             <a href="photos/snd_3_front.jpg" target="_blank" rel="noopener">
               <img src="photos/snd_3_front.jpg" alt="SB32 8MB RAM – Front">
             </a>
@@ -330,7 +351,7 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="net_yes_netware" data-comp-type="Networking">
             <a href="photos/yesnetware-rtl8019_1_top.jpg" target="_blank" rel="noopener">
               <img src="photos/yesnetware-rtl8019_1_top.jpg" alt="RTL8019 – Top">
             </a>
@@ -341,7 +362,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="net_yes_netware" data-comp-type="Networking">
             <a href="photos/yesnetware-rtl8019_2_bottom.jpg" target="_blank" rel="noopener">
               <img src="photos/yesnetware-rtl8019_2_bottom.jpg" alt="RTL8019 – Bottom">
             </a>
@@ -352,7 +373,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="net_yes_netware" data-comp-type="Networking">
             <a href="photos/yesnetware-rtl8019_3_front.jpg" target="_blank" rel="noopener">
               <img src="photos/yesnetware-rtl8019_3_front.jpg" alt="RTL8019 – Front">
             </a>
@@ -363,7 +384,7 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="storage_msystems_4gb_flash" data-comp-type="Storage">
             <a href="photos/msystems-4gb_1_top.jpg" target="_blank" rel="noopener">
               <img src="photos/msystems-4gb_1_top.jpg" alt="4GB SSD – Top">
             </a>
@@ -374,7 +395,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="storage_msystems_4gb_flash" data-comp-type="Storage">
             <a href="photos/msystems-4gb_2_bottom.jpg" target="_blank" rel="noopener">
               <img src="photos/msystems-4gb_2_bottom.jpg" alt="4GB SSD – Bottom">
             </a>
@@ -385,7 +406,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="storage_msystems_4gb_flash" data-comp-type="Storage">
             <a href="photos/msystems-4gb_3_side.jpg" target="_blank" rel="noopener">
               <img src="photos/msystems-4gb_3_side.jpg" alt="4GB SSD – Side">
             </a>
@@ -396,7 +417,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="storage_msystems_4gb_flash" data-comp-type="Storage">
             <a href="photos/msystems-4gb_4_front.jpg" target="_blank" rel="noopener">
               <img src="photos/msystems-4gb_4_front.jpg" alt="4GB SSD – Front">
             </a>
@@ -407,7 +428,7 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="optical_delta_oip_cd4800a_cd_rom_x48" data-comp-type="Optical drive">
             <a href="photos/delta_oip_cd4800a_1_front.jpg" target="_blank" rel="noopener">
               <img src="photos/delta_oip_cd4800a_1_front.jpg" alt="CD-ROM x48 – Front">
             </a>
@@ -418,7 +439,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="optical_delta_oip_cd4800a_cd_rom_x48" data-comp-type="Optical drive">
             <a href="photos/delta_oip_cd4800a_2_front_and_back.jpg" target="_blank" rel="noopener">
               <img src="photos/delta_oip_cd4800a_2_front_and_back.jpg" alt="CD-ROM x48 – Front and back">
             </a>
@@ -429,7 +450,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="optical_delta_oip_cd4800a_cd_rom_x48" data-comp-type="Optical drive">
             <a href="photos/delta_oip_cd4800a_3_top.jpg" target="_blank" rel="noopener">
               <img src="photos/delta_oip_cd4800a_3_top.jpg" alt="CD-ROM x48 – Top">
             </a>
@@ -440,7 +461,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="optical_delta_oip_cd4800a_cd_rom_x48" data-comp-type="Optical drive">
             <a href="photos/delta_oip_cd4800a_4_bottom.jpg" target="_blank" rel="noopener">
               <img src="photos/delta_oip_cd4800a_4_bottom.jpg" alt="CD-ROM x48 – Bottom">
             </a>
@@ -451,7 +472,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="optical_delta_oip_cd4800a_cd_rom_x48" data-comp-type="Optical drive">
             <a href="photos/delta_oip_cd4800a_4_sides.jpg" target="_blank" rel="noopener">
               <img src="photos/delta_oip_cd4800a_4_sides.jpg" alt="CD-ROM x48 – Sides">
             </a>
@@ -462,7 +483,7 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="diskette_samsung_sfd321b_144" data-comp-type="Diskette drive">
             <a href="photos/samsung-sfd-321b_1_front.jpg" target="_blank" rel="noopener">
               <img src="photos/samsung-sfd-321b_1_front.jpg" alt="1.44MB Floppy – Front">
             </a>
@@ -473,7 +494,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="diskette_samsung_sfd321b_144" data-comp-type="Diskette drive">
             <a href="photos/samsung-sfd-321b_2_front_and_back.jpg" target="_blank" rel="noopener">
               <img src="photos/samsung-sfd-321b_2_front_and_back.jpg" alt="1.44MB Floppy – Front and back">
             </a>
@@ -484,7 +505,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="diskette_samsung_sfd321b_144" data-comp-type="Diskette drive">
             <a href="photos/samsung-sfd-321b_3_top.jpg" target="_blank" rel="noopener">
               <img src="photos/samsung-sfd-321b_3_top.jpg" alt="1.44MB Floppy – Top">
             </a>
@@ -495,7 +516,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="diskette_samsung_sfd321b_144" data-comp-type="Diskette drive">
             <a href="photos/samsung-sfd-321b_4_bottom.jpg" target="_blank" rel="noopener">
               <img src="photos/samsung-sfd-321b_4_bottom.jpg" alt="1.44MB Floppy – Bottom">
             </a>
@@ -506,7 +527,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="diskette_samsung_sfd321b_144" data-comp-type="Diskette drive">
             <a href="photos/samsung-sfd-321b_5_sides.jpg" target="_blank" rel="noopener">
               <img src="photos/samsung-sfd-321b_5_sides.jpg" alt="1.44MB Floppy – Sides">
             </a>
@@ -517,7 +538,7 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="case_fujitsu_siemens_desktop_at" data-comp-type="Case">
             <a href="photos/case_1_front_top.jpg" target="_blank" rel="noopener">
               <img src="photos/case_1_front_top.jpg" alt="PCD-4H (AT) – Front top">
             </a>
@@ -528,7 +549,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="case_fujitsu_siemens_desktop_at" data-comp-type="Case">
             <a href="photos/case_2_front_closed.jpg" target="_blank" rel="noopener">
               <img src="photos/case_2_front_closed.jpg" alt="PCD-4H (AT) – Front closed">
             </a>
@@ -539,7 +560,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="case_fujitsu_siemens_desktop_at" data-comp-type="Case">
             <a href="photos/case_2_front_open.jpg" target="_blank" rel="noopener">
               <img src="photos/case_2_front_open.jpg" alt="PCD-4H (AT) – Front open">
             </a>
@@ -550,7 +571,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="case_fujitsu_siemens_desktop_at" data-comp-type="Case">
             <a href="photos/case_4_back.jpg" target="_blank" rel="noopener">
               <img src="photos/case_4_back.jpg" alt="PCD-4H (AT) – Back">
             </a>
@@ -561,7 +582,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="case_fujitsu_siemens_desktop_at" data-comp-type="Case">
             <a href="photos/case_5_inside.jpg" target="_blank" rel="noopener">
               <img src="photos/case_5_inside.jpg" alt="PCD-4H (AT) – Inside">
             </a>
@@ -572,7 +593,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="case_fujitsu_siemens_desktop_at" data-comp-type="Case">
             <a href="photos/case_6_inside_only_mobo.jpg" target="_blank" rel="noopener">
               <img src="photos/case_6_inside_only_mobo.jpg" alt="PCD-4H (AT) – Inside only mobo">
             </a>
@@ -581,6 +602,21 @@
             </figcaption>
           </figure>
                   </div>
+  </div>
+  <div id="hidden-hardware-configs" style="display:none;">
+            
+    <div id="hidden-config-orbit">
+          </div>
+
+    <div id="hidden-config-specs">
+      <table>
+        <tbody>
+                  </tbody>
+      </table>
+    </div>
+
+    <div id="hidden-config-gallery">
+          </div>
   </div>
   <!-- HOVER PANEL -->
   <div id="hover-panel">

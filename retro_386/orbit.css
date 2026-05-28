@@ -1,5 +1,5 @@
 .ns-retro_386 .orbit {
-  --count: 12;
+  --count: 13;
   --ratio: 0.75;          
   --radius: calc(var(--orbit-size) * var(--ratio) / 2);
   --laser-offset: -90deg;

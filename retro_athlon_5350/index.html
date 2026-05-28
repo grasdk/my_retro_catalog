@@ -16,6 +16,7 @@
 
   <!-- Script -->
   <script src="script.js" defer></script>
+  <script src="../config-switcher.js" defer></script>
   <script src="../chrome-print.js" defer></script>
 </head>
 <body>
@@ -35,44 +36,56 @@
             <div class="case-center" data-comp-id="case_chieftec_bt-02b-u3-250vs">
               <img src="photos/mini-itx_1_perspective.jpg" class="main-case">
             </div>
-                                                      <div class="component" 
-                   data-comp-id="cpu_amd_athlon_5350" 
-                   style="--i: 0">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="cpu_amd_athlon_5350"
+                 data-comp-type="CPU"
+                 style="--i: 0">
                 <img src="photos/athlon-5350_0_label.jpg">
                 <div class="comp-label">Athlon 5350</div>
               </div>
               <div class="line" style="--i: 0"></div>
-                                                      <div class="component" 
-                   data-comp-id="ram_8gbmb_2x4gb_ddr3" 
-                   style="--i: 1">
-                <img src="photos/cmx8gx3m2a1600c9_1_top.jpg">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="ram_8gbmb_2x4gb_ddr3"
+                 data-comp-type="RAM"
+                 style="--i: 1">
+                <img src="photos/2x4gb-ddr3-cmx8gx3m2a1600c9_1_top.jpg">
                 <div class="comp-label">8GB DDR3</div>
               </div>
               <div class="line" style="--i: 1"></div>
-                                                      <div class="component" 
-                   data-comp-id="mobo_asrock_am1h-itx" 
-                   style="--i: 2">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="mobo_asrock_am1h-itx"
+                 data-comp-type="Motherboard"
+                 style="--i: 2">
                 <img src="photos/am1h-itx_1_top.jpg">
                 <div class="comp-label">ASRock AM1H-ITX</div>
               </div>
               <div class="line" style="--i: 2"></div>
-                                                      <div class="component" 
-                   data-comp-id="gfx_nvidia_quadro_k2000_pcie" 
-                   style="--i: 3">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="gfx_nvidia_quadro_k2000_pcie"
+                 data-comp-type="Graphics"
+                 style="--i: 3">
                 <img src="photos/quadro_k2000_1_top.jpg">
                 <div class="comp-label">Quadro K2000</div>
               </div>
               <div class="line" style="--i: 3"></div>
-                                                      <div class="component" 
-                   data-comp-id="storage_western_digital_caviar_blue_250gb" 
-                   style="--i: 4">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="storage_western_digital_caviar_blue_250gb"
+                 data-comp-type="Storage"
+                 style="--i: 4">
                 <img src="photos/wd2500aajs_1_top.jpg">
                 <div class="comp-label">250GB HDD</div>
               </div>
               <div class="line" style="--i: 4"></div>
-                                                      <div class="component" 
-                   data-comp-id="optical_hitachi-lg_gh41n_dvd_rw_x16" 
-                   style="--i: 5">
+                                                    <div class="component" 
+                 data-comp-config="1"
+                 data-comp-id="optical_hitachi-lg_gh41n_dvd_rw_x16"
+                 data-comp-type="Optical drive"
+                 style="--i: 5">
                 <img src="photos/gh41n_1_front.jpg">
                 <div class="comp-label">DVD-RW x 16</div>
               </div>
@@ -89,54 +102,54 @@
               <tr><th>Component</th><th>shortname</th><th>Designation</th><th>Year</th><!--<th>Retro-price</th>--></tr>
             </thead>
             <tbody>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="cpu_amd_athlon_5350" data-comp-type="CPU">
                 <td>CPU</td>
                 <td>Athlon 5350</td>
-                <td>AMD Athlon 5350 Boxed</td>
+                <td>AMD Athlon 5350 Boxed Kabini</td>
                 <td>2014</td>
-                <!--<td>___$</td>-->
+                <!--<td>25$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="ram_8gbmb_2x4gb_ddr3" data-comp-type="RAM">
                 <td>RAM</td>
                 <td>8GB DDR3</td>
                 <td>8GB: 2 x 4GB Corsair CMX8GX3M2A1600C9 DDR3 RAM</td>
                 <td>~2010</td>
-                <!--<td>___$</td>-->
+                <!--<td>40$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="mobo_asrock_am1h-itx" data-comp-type="Motherboard">
                 <td>Motherboard</td>
                 <td>ASRock AM1H-ITX</td>
                 <td>ASRock AM1H-ITX with onboard Realtek Network and Sound</td>
                 <td>2014</td>
-                <!--<td>___$</td>-->
+                <!--<td>30$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="gfx_nvidia_quadro_k2000_pcie" data-comp-type="Graphics">
                 <td>Graphics</td>
                 <td>Quadro K2000</td>
-                <td>NVidia Quadro K2000 2GB GDDR5</td>
+                <td>NVIDIA Quadro K2000 PCIe</td>
                 <td>2013</td>
-                <!--<td>__$</td>-->
+                <!--<td>15$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="storage_western_digital_caviar_blue_250gb" data-comp-type="Storage">
                 <td>Storage</td>
                 <td>250GB HDD</td>
                 <td>Western Digital Caviar Blue WD2500AAJS SATA 7200RPM 250GB</td>
                 <td>2006</td>
-                <!--<td>__$</td>-->
+                <!--<td>18$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="optical_hitachi-lg_gh41n_dvd_rw_x16" data-comp-type="Optical drive">
                 <td>Optical drive</td>
                 <td>DVD-RW x 16</td>
                 <td>Hitachi-LG GH41N DVD RW</td>
                 <td>2010</td>
-                <!--<td>__$</td>-->
+                <!--<td>15$</td>-->
               </tr>
-                            <tr>
+                            <tr data-comp-config="1" data-comp-id="case_chieftec_bt-02b-u3-250vs" data-comp-type="Case">
                 <td>Case</td>
                 <td>Chieftec SFF (mITX)</td>
                 <td>Chieftec Mini-ITX Case BT-02B-U3-250VS</td>
                 <td>2016</td>
-                <!--<td>___$</td>-->
+                <!--<td>15$</td>-->
               </tr>
                           </tbody>
           </table>
@@ -145,6 +158,8 @@
             <a href="../index.html" class="details-link-compact">
               ← OVERVIEW
             </a>
+
+                        
           </div>
       </div>
     </div>
@@ -156,7 +171,7 @@
                                             
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="cpu_amd_athlon_5350" data-comp-type="CPU">
             <a href="photos/athlon-5350_0_label.jpg" target="_blank" rel="noopener">
               <img src="photos/athlon-5350_0_label.jpg" alt="Athlon 5350 – Label">
             </a>
@@ -167,9 +182,9 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
-            <a href="photos/cmx8gx3m2a1600c9_1_top.jpg" target="_blank" rel="noopener">
-              <img src="photos/cmx8gx3m2a1600c9_1_top.jpg" alt="8GB DDR3 – Top">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="ram_8gbmb_2x4gb_ddr3" data-comp-type="RAM">
+            <a href="photos/2x4gb-ddr3-cmx8gx3m2a1600c9_1_top.jpg" target="_blank" rel="noopener">
+              <img src="photos/2x4gb-ddr3-cmx8gx3m2a1600c9_1_top.jpg" alt="8GB DDR3 – Top">
             </a>
             <figcaption>
               8GB DDR3 — Top
@@ -178,9 +193,9 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
-            <a href="photos/cmx8gx3m2a1600c9_2_bottom.jpg" target="_blank" rel="noopener">
-              <img src="photos/cmx8gx3m2a1600c9_2_bottom.jpg" alt="8GB DDR3 – Bottom">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="ram_8gbmb_2x4gb_ddr3" data-comp-type="RAM">
+            <a href="photos/2x4gb-ddr3-cmx8gx3m2a1600c9_2_bottom.jpg" target="_blank" rel="noopener">
+              <img src="photos/2x4gb-ddr3-cmx8gx3m2a1600c9_2_bottom.jpg" alt="8GB DDR3 – Bottom">
             </a>
             <figcaption>
               8GB DDR3 — Bottom
@@ -189,7 +204,7 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="mobo_asrock_am1h-itx" data-comp-type="Motherboard">
             <a href="photos/am1h-itx_1_top.jpg" target="_blank" rel="noopener">
               <img src="photos/am1h-itx_1_top.jpg" alt="ASRock AM1H-ITX – Top">
             </a>
@@ -200,7 +215,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="mobo_asrock_am1h-itx" data-comp-type="Motherboard">
             <a href="photos/am1h-itx_2_bottom.jpg" target="_blank" rel="noopener">
               <img src="photos/am1h-itx_2_bottom.jpg" alt="ASRock AM1H-ITX – Bottom">
             </a>
@@ -211,7 +226,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="mobo_asrock_am1h-itx" data-comp-type="Motherboard">
             <a href="photos/am1h-itx_3_front.jpg" target="_blank" rel="noopener">
               <img src="photos/am1h-itx_3_front.jpg" alt="ASRock AM1H-ITX – Front">
             </a>
@@ -222,7 +237,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="mobo_asrock_am1h-itx" data-comp-type="Motherboard">
             <a href="photos/am1h-itx_4_back.jpg" target="_blank" rel="noopener">
               <img src="photos/am1h-itx_4_back.jpg" alt="ASRock AM1H-ITX – Back">
             </a>
@@ -233,7 +248,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="mobo_asrock_am1h-itx" data-comp-type="Motherboard">
             <a href="photos/am1h-itx_6_side.jpg" target="_blank" rel="noopener">
               <img src="photos/am1h-itx_6_side.jpg" alt="ASRock AM1H-ITX – Side">
             </a>
@@ -244,7 +259,7 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="gfx_nvidia_quadro_k2000_pcie" data-comp-type="Graphics">
             <a href="photos/quadro_k2000_1_top.jpg" target="_blank" rel="noopener">
               <img src="photos/quadro_k2000_1_top.jpg" alt="Quadro K2000 – Top">
             </a>
@@ -255,7 +270,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="gfx_nvidia_quadro_k2000_pcie" data-comp-type="Graphics">
             <a href="photos/quadro_k2000_2_bottom.jpg" target="_blank" rel="noopener">
               <img src="photos/quadro_k2000_2_bottom.jpg" alt="Quadro K2000 – Bottom">
             </a>
@@ -266,7 +281,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="gfx_nvidia_quadro_k2000_pcie" data-comp-type="Graphics">
             <a href="photos/quadro_k2000_3_front.jpg" target="_blank" rel="noopener">
               <img src="photos/quadro_k2000_3_front.jpg" alt="Quadro K2000 – Front">
             </a>
@@ -277,7 +292,7 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="storage_western_digital_caviar_blue_250gb" data-comp-type="Storage">
             <a href="photos/wd2500aajs_1_top.jpg" target="_blank" rel="noopener">
               <img src="photos/wd2500aajs_1_top.jpg" alt="250GB HDD – Top">
             </a>
@@ -288,7 +303,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="storage_western_digital_caviar_blue_250gb" data-comp-type="Storage">
             <a href="photos/wd2500aajs_2_bottom.jpg" target="_blank" rel="noopener">
               <img src="photos/wd2500aajs_2_bottom.jpg" alt="250GB HDD – Bottom">
             </a>
@@ -299,7 +314,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="storage_western_digital_caviar_blue_250gb" data-comp-type="Storage">
             <a href="photos/wd2500aajs_3_front.jpg" target="_blank" rel="noopener">
               <img src="photos/wd2500aajs_3_front.jpg" alt="250GB HDD – Front">
             </a>
@@ -310,7 +325,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="storage_western_digital_caviar_blue_250gb" data-comp-type="Storage">
             <a href="photos/wd2500aajs_4_front_and_back.jpg" target="_blank" rel="noopener">
               <img src="photos/wd2500aajs_4_front_and_back.jpg" alt="250GB HDD – Front and back">
             </a>
@@ -321,7 +336,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="storage_western_digital_caviar_blue_250gb" data-comp-type="Storage">
             <a href="photos/wd2500aajs_5_sides.jpg" target="_blank" rel="noopener">
               <img src="photos/wd2500aajs_5_sides.jpg" alt="250GB HDD – Sides">
             </a>
@@ -332,7 +347,7 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="optical_hitachi-lg_gh41n_dvd_rw_x16" data-comp-type="Optical drive">
             <a href="photos/gh41n_1_front.jpg" target="_blank" rel="noopener">
               <img src="photos/gh41n_1_front.jpg" alt="DVD-RW x 16 – Front">
             </a>
@@ -343,7 +358,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="optical_hitachi-lg_gh41n_dvd_rw_x16" data-comp-type="Optical drive">
             <a href="photos/gh41n_2_front_and_back.jpg" target="_blank" rel="noopener">
               <img src="photos/gh41n_2_front_and_back.jpg" alt="DVD-RW x 16 – Front and back">
             </a>
@@ -354,7 +369,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="optical_hitachi-lg_gh41n_dvd_rw_x16" data-comp-type="Optical drive">
             <a href="photos/gh41n_3_top.jpg" target="_blank" rel="noopener">
               <img src="photos/gh41n_3_top.jpg" alt="DVD-RW x 16 – Top">
             </a>
@@ -365,7 +380,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="optical_hitachi-lg_gh41n_dvd_rw_x16" data-comp-type="Optical drive">
             <a href="photos/gh41n_4_bottom.jpg" target="_blank" rel="noopener">
               <img src="photos/gh41n_4_bottom.jpg" alt="DVD-RW x 16 – Bottom">
             </a>
@@ -376,7 +391,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="optical_hitachi-lg_gh41n_dvd_rw_x16" data-comp-type="Optical drive">
             <a href="photos/gh41n_4_sides.jpg" target="_blank" rel="noopener">
               <img src="photos/gh41n_4_sides.jpg" alt="DVD-RW x 16 – Sides">
             </a>
@@ -387,7 +402,7 @@
                                                     
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="case_chieftec_bt-02b-u3-250vs" data-comp-type="Case">
             <a href="photos/mini-itx_1_perspective.jpg" target="_blank" rel="noopener">
               <img src="photos/mini-itx_1_perspective.jpg" alt="Chieftec SFF (mITX) – Perspective">
             </a>
@@ -398,7 +413,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="case_chieftec_bt-02b-u3-250vs" data-comp-type="Case">
             <a href="photos/mini-itx_2_front.jpg" target="_blank" rel="noopener">
               <img src="photos/mini-itx_2_front.jpg" alt="Chieftec SFF (mITX) – Front">
             </a>
@@ -409,7 +424,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="case_chieftec_bt-02b-u3-250vs" data-comp-type="Case">
             <a href="photos/mini-itx_3_front_on.jpg" target="_blank" rel="noopener">
               <img src="photos/mini-itx_3_front_on.jpg" alt="Chieftec SFF (mITX) – Front on">
             </a>
@@ -420,7 +435,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="case_chieftec_bt-02b-u3-250vs" data-comp-type="Case">
             <a href="photos/mini-itx_4_back.jpg" target="_blank" rel="noopener">
               <img src="photos/mini-itx_4_back.jpg" alt="Chieftec SFF (mITX) – Back">
             </a>
@@ -431,7 +446,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="case_chieftec_bt-02b-u3-250vs" data-comp-type="Case">
             <a href="photos/mini-itx_5_inside.jpg" target="_blank" rel="noopener">
               <img src="photos/mini-itx_5_inside.jpg" alt="Chieftec SFF (mITX) – Inside">
             </a>
@@ -442,9 +457,9 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
-            <a href="photos/mini-itx_5_inside_expanded.jpg" target="_blank" rel="noopener">
-              <img src="photos/mini-itx_5_inside_expanded.jpg" alt="Chieftec SFF (mITX) – Inside expanded">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="case_chieftec_bt-02b-u3-250vs" data-comp-type="Case">
+            <a href="photos/mini-itx_6_inside_expanded.jpg" target="_blank" rel="noopener">
+              <img src="photos/mini-itx_6_inside_expanded.jpg" alt="Chieftec SFF (mITX) – Inside expanded">
             </a>
             <figcaption>
               Chieftec SFF (mITX) — Inside expanded
@@ -453,7 +468,7 @@
                                       
                                         
                                                       
-          <figure class="photo-card">
+          <figure class="photo-card" data-comp-config="1" data-comp-id="case_chieftec_bt-02b-u3-250vs" data-comp-type="Case">
             <a href="photos/mini-itx_7_inside_front.jpg" target="_blank" rel="noopener">
               <img src="photos/mini-itx_7_inside_front.jpg" alt="Chieftec SFF (mITX) – Inside front">
             </a>
@@ -462,6 +477,21 @@
             </figcaption>
           </figure>
                   </div>
+  </div>
+  <div id="hidden-hardware-configs" style="display:none;">
+            
+    <div id="hidden-config-orbit">
+          </div>
+
+    <div id="hidden-config-specs">
+      <table>
+        <tbody>
+                  </tbody>
+      </table>
+    </div>
+
+    <div id="hidden-config-gallery">
+          </div>
   </div>
   <!-- HOVER PANEL -->
   <div id="hover-panel">

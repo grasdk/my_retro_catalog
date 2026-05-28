@@ -133,6 +133,56 @@ body.all-page {
   50% { opacity: 1; transform: scaleX(1.05); }
 }
 
+/* Column Filters */
+.column-filter {
+    width: 100%;
+    margin-top: 6px;
+    padding: 6px 8px;
+    font-size: 0.82rem;
+    background: #1a1a1a;
+    border: 1px solid #0f0;
+    color: #ddd;
+    border-radius: 4px;
+    font-family: 'Share Tech Mono', monospace;
+    transition: all 0.2s ease;
+}
+
+.column-filter:focus {
+    outline: none;
+    border-color: #ff0;
+    background: #222;
+    box-shadow: 0 0 8px rgba(255, 255, 0, 0.3);
+}
+
+.column-filter::placeholder {
+    color: #555;
+    font-style: italic;
+}
+
+/* Make header cells a bit taller to fit filters */
+th {
+    padding: 10px 8px 8px 8px !important;
+    vertical-align: top;
+}
+
+/* Clear Filters Button */
+#clear-filters {
+    background: #330000;
+    color: #ff6666;
+    border: 1px solid #ff3333;
+    padding: 6px 12px;
+    margin: 8px 0 12px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+#clear-filters:hover {
+    background: #550000;
+    color: #ffaaaa;
+}
+
+
 /* Print cleanup */
 @media print {
   body.all-page { padding: 0; background: #fff; color: #000; }
